@@ -309,19 +309,9 @@ footer{padding:44px 20px;text-align:center;background:#f5e3dd;color:var(--rose-d
 }
 
 .palette-hearts span{
-  width:52px;
-  height:52px;
-  display:block;
-  border-radius:0;
-  background-clip:padding-box;
-  -webkit-mask-image:url("dress-heart-mask.svg");
-  -webkit-mask-repeat:no-repeat;
-  -webkit-mask-position:center;
-  -webkit-mask-size:contain;
-  mask-image:url("dress-heart-mask.svg");
-  mask-repeat:no-repeat;
-  mask-position:center;
-  mask-size:contain;
+  width:48px;
+  height:48px;
+  clip-path:path("M24 44 C-7 21 7 -5 24 9 C41 -5 55 21 24 44 Z");
   box-shadow:
     inset 0 2px 8px rgba(255,255,255,.45),
     0 8px 18px rgba(0,0,0,.12);
@@ -350,11 +340,72 @@ footer{padding:44px 20px;text-align:center;background:#f5e3dd;color:var(--rose-d
   .rule-icon{width:38px;height:38px;font-size:24px}
   .rule-card p{font-size:16px;line-height:1.65}
   .palette-hearts{gap:10px}
+  .palette-hearts span{width:38px;height:38px}
+}
+
+
+/* === Исправление сердечек палитры для мобильной версии === */
+.palette-hearts{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:16px;
+  overflow:visible;
+  padding:8px 4px;
+}
+
+.palette-hearts span{
+  width:58px !important;
+  height:58px !important;
+  min-width:58px !important;
+  min-height:58px !important;
+  display:block;
+  flex:0 0 58px;
+  border-radius:0 !important;
+  clip-path:none !important;
+  -webkit-clip-path:none !important;
+  -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='black' d='M50 91C50 91 10 66 10 37C10 20 22 9 37 9C45 9 50 14 50 14C50 14 55 9 63 9C78 9 90 20 90 37C90 66 50 91 50 91Z'/%3E%3C/svg%3E");
+  -webkit-mask-repeat:no-repeat;
+  -webkit-mask-position:center;
+  -webkit-mask-size:92% 92%;
+  mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='black' d='M50 91C50 91 10 66 10 37C10 20 22 9 37 9C45 9 50 14 50 14C50 14 55 9 63 9C78 9 90 20 90 37C90 66 50 91 50 91Z'/%3E%3C/svg%3E");
+  mask-repeat:no-repeat;
+  mask-position:center;
+  mask-size:92% 92%;
+  background-clip:border-box;
+  overflow:visible;
+  transform:translateZ(0);
+}
+
+@media(max-width:760px){
+  .palette-hearts{
+    gap:10px;
+    padding:10px 0;
+  }
+
   .palette-hearts span{
-    width:46px;
-    height:46px;
-    min-width:46px;
-    min-height:46px;
+    width:44px !important;
+    height:44px !important;
+    min-width:44px !important;
+    min-height:44px !important;
+    flex-basis:44px;
+    -webkit-mask-size:94% 94%;
+    mask-size:94% 94%;
+  }
+}
+
+@media(max-width:380px){
+  .palette-hearts{
+    gap:8px;
+  }
+
+  .palette-hearts span{
+    width:40px !important;
+    height:40px !important;
+    min-width:40px !important;
+    min-height:40px !important;
+    flex-basis:40px;
   }
 }
 
