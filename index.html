@@ -309,9 +309,19 @@ footer{padding:44px 20px;text-align:center;background:#f5e3dd;color:var(--rose-d
 }
 
 .palette-hearts span{
-  width:48px;
-  height:48px;
-  clip-path:path("M24 44 C-7 21 7 -5 24 9 C41 -5 55 21 24 44 Z");
+  width:52px;
+  height:52px;
+  display:block;
+  border-radius:0;
+  background-clip:padding-box;
+  -webkit-mask-image:url("dress-heart-mask.svg");
+  -webkit-mask-repeat:no-repeat;
+  -webkit-mask-position:center;
+  -webkit-mask-size:contain;
+  mask-image:url("dress-heart-mask.svg");
+  mask-repeat:no-repeat;
+  mask-position:center;
+  mask-size:contain;
   box-shadow:
     inset 0 2px 8px rgba(255,255,255,.45),
     0 8px 18px rgba(0,0,0,.12);
@@ -340,7 +350,12 @@ footer{padding:44px 20px;text-align:center;background:#f5e3dd;color:var(--rose-d
   .rule-icon{width:38px;height:38px;font-size:24px}
   .rule-card p{font-size:16px;line-height:1.65}
   .palette-hearts{gap:10px}
-  .palette-hearts span{width:38px;height:38px}
+  .palette-hearts span{
+    width:46px;
+    height:46px;
+    min-width:46px;
+    min-height:46px;
+  }
 }
 
 </style>
