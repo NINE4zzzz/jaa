@@ -205,13 +205,151 @@ footer{padding:44px 20px;text-align:center;background:#f5e3dd;color:var(--rose-d
   .map-section{background-attachment: scroll;}
 }
 
+
+/* =========================
+   БЛОК ПРАВИЛ И ДРЕСС-КОДА
+========================= */
+.dresscode-section{
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255,214,209,.28), transparent 32%),
+    radial-gradient(circle at 85% 75%, rgba(212,175,127,.18), transparent 34%),
+    linear-gradient(rgba(255,248,241,.94), rgba(255,248,241,.98));
+}
+
+.rules-wrapper{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:24px;
+  margin-top:38px;
+}
+
+.rule-card{
+  background:rgba(255,255,255,.84);
+  backdrop-filter:blur(10px);
+  border-radius:32px;
+  padding:34px;
+  box-shadow:0 18px 45px rgba(72,47,37,.10);
+  border:1px solid rgba(216,169,162,.20);
+  position:relative;
+  overflow:hidden;
+}
+
+.rule-card:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at top right, rgba(255,214,209,.20), transparent 42%);
+  pointer-events:none;
+}
+
+.rule-row{
+  display:grid;
+  grid-template-columns:54px 1fr;
+  gap:16px;
+  align-items:start;
+  position:relative;
+  z-index:1;
+}
+
+.rule-icon{
+  width:48px;
+  height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#fff4f1;
+  color:#d8a9a2;
+  font-size:30px;
+  box-shadow:0 10px 25px rgba(216,169,162,.18);
+  animation:float 5s ease-in-out infinite;
+}
+
+.rule-card p{
+  font-size:18px;
+  line-height:1.8;
+  color:#5e4b44;
+}
+
+.rule-card strong{color:#9d6b62}
+
+.dresscode-layout{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:22px;
+  margin-top:24px;
+  position:relative;
+  z-index:1;
+}
+
+.dresscode-image{
+  margin:4px auto 0;
+  width:min(100%, 980px);
+  background:transparent;
+  border-radius:0;
+  box-shadow:none;
+  overflow:visible;
+}
+
+.dresscode-image img{
+  width:100%;
+  display:block;
+  object-fit:contain;
+  background:transparent;
+  border-radius:0;
+  box-shadow:none;
+}
+
+.palette-hearts{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:16px;
+  margin-top:22px;
+}
+
+.palette-hearts span{
+  width:48px;
+  height:48px;
+  clip-path:path("M24 44 C-7 21 7 -5 24 9 C41 -5 55 21 24 44 Z");
+  box-shadow:
+    inset 0 2px 8px rgba(255,255,255,.45),
+    0 8px 18px rgba(0,0,0,.12);
+  animation:float 5s ease-in-out infinite;
+}
+
+.palette-hearts span:nth-child(2){animation-delay:.25s}
+.palette-hearts span:nth-child(3){animation-delay:.5s}
+.palette-hearts span:nth-child(4){animation-delay:.75s}
+.palette-hearts span:nth-child(5){animation-delay:1s}
+.palette-hearts span:nth-child(6){animation-delay:1.25s}
+.palette-hearts span:nth-child(7){animation-delay:1.5s}
+.palette-hearts span:nth-child(8){animation-delay:1.75s}
+
+.dresscode-note{
+  margin-top:20px;
+  text-align:center;
+  font-style:italic;
+  color:#8c6f66;
+}
+
+@media(max-width:760px){
+  .rules-wrapper{gap:18px}
+  .rule-card{padding:24px;border-radius:24px}
+  .rule-row{grid-template-columns:42px 1fr;gap:12px}
+  .rule-icon{width:38px;height:38px;font-size:24px}
+  .rule-card p{font-size:16px;line-height:1.65}
+  .palette-hearts{gap:10px}
+  .palette-hearts span{width:38px;height:38px}
+}
+
 </style>
 </head>
 
 <body>
 <div class="petals-layer" id="petalsLayer"></div>
 <nav class="top-nav">
-<a href="#home">Главная</a><a href="#details">Детали</a><a href="#story">История</a><a href="#moments">Моменты</a><a href="#map">Карта</a><a href="#rsvp">Гости</a>
+<a href="#home">Главная</a><a href="#details">Детали</a><a href="#story">История</a><a href="#moments">Моменты</a><a href="#dresscode">Пожелания</a><a href="#map">Карта</a><a href="#rsvp">Гости</a>
 </nav>
 
 <header class="hero" id="home">
@@ -261,6 +399,72 @@ footer{padding:44px 20px;text-align:center;background:#f5e3dd;color:var(--rose-d
 <div class="gallery-card"><img src="gallery-we.jpg" alt="Артём и Юля"></div>
 </div></div></section>
 
+
+<section class="section-decor dresscode-section" id="dresscode">
+  <div class="container">
+    <h2 class="section-title">Пожелания 🤍</h2>
+
+    <p class="section-subtitle">
+      Будем благодарны, если вы будете следовать нескольким простым правилам
+      и поддержите атмосферу нашего вечера.
+    </p>
+
+    <div class="rules-wrapper">
+
+      <div class="rule-card">
+        <div class="rule-row">
+          <div class="rule-icon">♡</div>
+          <p>
+            Воздержитесь, пожалуйста, от криков <strong>«Горько»</strong> на празднике,
+            ведь поцелуй — знак выражения чувств, он не может быть по заказу.
+          </p>
+        </div>
+      </div>
+
+      <div class="rule-card">
+        <div class="rule-row">
+          <div class="rule-icon">✿</div>
+          <p>
+            Мы очень старались создать уютный вечер, поэтому будем рады, если вы поддержите
+            наш дресс-код и выберете на этот вечер пастельные оттенки.
+          </p>
+        </div>
+
+        <div class="dresscode-layout">
+         
+
+          <div class="palette-hearts" aria-label="Цветовая палитра дресс-кода">
+            <span style="background:#e8a5ad;"></span>
+            <span style="background:#955260;"></span>
+            <span style="background:#e4c85e;"></span>
+            <span style="background:#7a4d38;"></span>
+            <span style="background:#b9d7e6;"></span>
+            <span style="background:#3f638f;"></span>
+            <span style="background:#9caf8d;"></span>
+            <span style="background:#55623a;"></span>
+          </div>
+
+          <p class="dresscode-note">
+            По возможности постарайтесь, пожалуйста, не надевать одежду
+            с бежевыми и белыми оттенками 🤍
+          </p>
+        </div>
+      </div>
+
+      <div class="rule-card">
+        <div class="rule-row">
+          <div class="rule-icon">❀</div>
+          <p>
+            Этот вечер создан для любви, танцев и душевных разговоров —
+            поддержите его настроение вместе с нами.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <section id="map" class="map-section section-decor"><div class="container">
 <h2 class="section-title">Как добраться</h2>
 <p class="section-subtitle">Точный адрес места проведения свадьбы.</p>
@@ -293,15 +497,24 @@ updateCountdown();setInterval(updateCountdown,1000);
 
 const categories=["друзья невесты","друзья жениха","родственники невесты","родственники жениха"];
 const statuses=["придёт","не придёт","под вопросом"];
-let guests=JSON.parse(localStorage.getItem("weddingGuests"))||[{category:"друзья невесты",name:"",count:1,status:"под вопросом",comment:""}];
-function saveGuests(){localStorage.setItem("weddingGuests",JSON.stringify(guests))}
-function renderGuests(){const table=document.getElementById("guestTable");table.innerHTML="";guests.forEach((guest,index)=>{const row=document.createElement("tr");row.innerHTML=`<td><select onchange="updateGuest(${index}, 'category', this.value)">${categories.map(cat=>`<option value="${cat}" ${guest.category===cat?"selected":""}>${cat}</option>`).join("")}</select></td><td><input type="text" value="${escapeHtml(guest.name)}" onchange="updateGuest(${index}, 'name', this.value)" placeholder="Имя гостя"></td><td><input type="number" min="1" value="${guest.count}" onchange="updateGuest(${index}, 'count', this.value)"></td><td><select onchange="updateGuest(${index}, 'status', this.value)">${statuses.map(status=>`<option value="${status}" ${guest.status===status?"selected":""}>${status}</option>`).join("")}</select></td><td><input type="text" value="${escapeHtml(guest.comment)}" onchange="updateGuest(${index}, 'comment', this.value)" placeholder="Комментарий"></td><td><button class="delete-btn" onclick="deleteGuest(${index})">Удалить</button></td>`;table.appendChild(row)});updateStats()}
-function addGuest(){guests.push({category:"друзья невесты",name:"",count:1,status:"под вопросом",comment:""});saveGuests();renderGuests()}
-function deleteGuest(index){guests.splice(index,1);saveGuests();renderGuests()}
-function updateGuest(index,field,value){guests[index][field]=field==="count"?Number(value):value;saveGuests();updateStats()}
-function updateStats(){const total=guests.reduce((sum,g)=>sum+Number(g.count||0),0);const confirmed=guests.filter(g=>g.status==="придёт").reduce((sum,g)=>sum+Number(g.count||0),0);document.getElementById("totalGuests").textContent=total;document.getElementById("confirmedGuests").textContent=confirmed}
+const API_URL="/api/guests";
+let guests=[];
+let lastServerSnapshot="";
+let saveTimer=null;
+let savingPromise=Promise.resolve();
+function snapshot(list){return JSON.stringify(list)}
 function escapeHtml(text){return String(text||"").replaceAll("&","&amp;").replaceAll('"',"&quot;").replaceAll("<","&lt;").replaceAll(">","&gt;")}
-renderGuests();
+function renderGuests(){const table=document.getElementById("guestTable");table.innerHTML="";guests.forEach((guest,index)=>{const row=document.createElement("tr");row.innerHTML=`<td><select onchange="updateGuest(${index}, 'category', this.value)">${categories.map(cat=>`<option value="${cat}" ${guest.category===cat?"selected":""}>${cat}</option>`).join("")}</select></td><td><input type="text" value="${escapeHtml(guest.name)}" onchange="updateGuest(${index}, 'name', this.value)" placeholder="Имя гостя"></td><td><input type="number" min="1" value="${guest.count}" onchange="updateGuest(${index}, 'count', this.value)"></td><td><select onchange="updateGuest(${index}, 'status', this.value)">${statuses.map(status=>`<option value="${status}" ${guest.status===status?"selected":""}>${status}</option>`).join("")}</select></td><td><input type="text" value="${escapeHtml(guest.comment)}" onchange="updateGuest(${index}, 'comment', this.value)" placeholder="Комментарий"></td><td><button class="delete-btn" onclick="deleteGuest(${index})">Удалить</button></td>`;table.appendChild(row)});updateStats()}
+function updateStats(){const total=guests.reduce((sum,g)=>sum+Number(g.count||0),0);const confirmed=guests.filter(g=>g.status==="придёт").reduce((sum,g)=>sum+Number(g.count||0),0);document.getElementById("totalGuests").textContent=total;document.getElementById("confirmedGuests").textContent=confirmed}
+async function loadGuests(){try{const res=await fetch(API_URL,{cache:"no-store"});if(!res.ok)return;const data=await res.json();const incoming=Array.isArray(data.guests)?data.guests:[];const incomingSnap=snapshot(incoming);if(incomingSnap===lastServerSnapshot)return;const panel=document.getElementById("guestTable");if(panel&&panel.contains(document.activeElement))return;guests=incoming;lastServerSnapshot=incomingSnap;renderGuests()}catch(e){}}
+function scheduleSave(){if(saveTimer)clearTimeout(saveTimer);saveTimer=setTimeout(commitSave,400)}
+async function commitSave(){const payload=snapshot(guests);savingPromise=savingPromise.then(async()=>{try{const res=await fetch(API_URL,{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify({guests})});if(res.ok){const data=await res.json();if(Array.isArray(data.guests)){lastServerSnapshot=snapshot(data.guests)}else{lastServerSnapshot=payload}}}catch(e){}});return savingPromise}
+function addGuest(){guests.push({category:"друзья невесты",name:"",count:1,status:"под вопросом",comment:""});renderGuests();scheduleSave()}
+function deleteGuest(index){guests.splice(index,1);renderGuests();scheduleSave()}
+function updateGuest(index,field,value){guests[index][field]=field==="count"?Number(value):value;updateStats();scheduleSave()}
+loadGuests();
+setInterval(loadGuests,8000);
+window.addEventListener("focus",loadGuests);
 
 // Анимация появления карты при скролле
 const mapWrap = document.querySelector(".map-wrap");
