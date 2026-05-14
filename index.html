@@ -409,6 +409,74 @@ footer{padding:44px 20px;text-align:center;background:#f5e3dd;color:var(--rose-d
   }
 }
 
+
+/* === Более выраженная форма сердечек в блоке дресс-кода === */
+.palette-hearts{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:16px;
+  overflow:visible;
+  padding:10px 4px;
+}
+
+.palette-hearts span{
+  width:58px !important;
+  height:58px !important;
+  min-width:58px !important;
+  min-height:58px !important;
+  display:block;
+  flex:0 0 58px;
+  border-radius:0 !important;
+  clip-path:none !important;
+  -webkit-clip-path:none !important;
+  -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='black' d='M50 94 L42 86 C18 64 6 48 6 30 C6 15 17 5 31 5 C41 5 47 12 50 21 C53 12 59 5 69 5 C83 5 94 15 94 30 C94 48 82 64 58 86 Z'/%3E%3C/svg%3E");
+  -webkit-mask-repeat:no-repeat;
+  -webkit-mask-position:center;
+  -webkit-mask-size:100% 100%;
+  mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='black' d='M50 94 L42 86 C18 64 6 48 6 30 C6 15 17 5 31 5 C41 5 47 12 50 21 C53 12 59 5 69 5 C83 5 94 15 94 30 C94 48 82 64 58 86 Z'/%3E%3C/svg%3E");
+  mask-repeat:no-repeat;
+  mask-position:center;
+  mask-size:100% 100%;
+  background-clip:border-box;
+  overflow:visible;
+  transform:translateZ(0);
+  box-shadow:
+    inset 0 2px 8px rgba(255,255,255,.35),
+    0 10px 22px rgba(0,0,0,.14);
+  animation:float 5s ease-in-out infinite;
+}
+
+@media(max-width:760px){
+  .palette-hearts{
+    gap:10px;
+    padding:10px 0;
+  }
+
+  .palette-hearts span{
+    width:46px !important;
+    height:46px !important;
+    min-width:46px !important;
+    min-height:46px !important;
+    flex-basis:46px;
+    -webkit-mask-size:100% 100%;
+    mask-size:100% 100%;
+  }
+}
+
+@media(max-width:380px){
+  .palette-hearts{gap:8px}
+
+  .palette-hearts span{
+    width:42px !important;
+    height:42px !important;
+    min-width:42px !important;
+    min-height:42px !important;
+    flex-basis:42px;
+  }
+}
+
 </style>
 </head>
 
